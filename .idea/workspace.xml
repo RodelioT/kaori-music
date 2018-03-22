@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9019379c-78fe-49e6-8fa9-c542312725d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -164,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rake.db:seed: kaori-music">
+  <component name="RunManager" selected="Rake.db:migrate: kaori-music">
     <configuration name="Development: kaori-music" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="kaori-music" />
@@ -285,8 +284,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Rake.db:seed: kaori-music" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.db:migrate: kaori-music" />
+        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate: kaori-music" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.db:seed: kaori-music" />
       </list>
     </recent_temporary>
   </component>
@@ -304,12 +303,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521742885360</updated>
-      <workItem from="1521742895800" duration="1568000" />
+      <workItem from="1521742895800" duration="1727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1568000" />
+    <option name="totallyTimeSpent" value="1727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
