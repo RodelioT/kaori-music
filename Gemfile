@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # Self-added gems
 gem 'activeadmin'     # Back-end administration tools
 gem 'bootstrap-sass'  # Bootstrap
+gem 'carrierwave'     # Image uploads
 gem 'devise'          # Dependency for activeAdmin
 gem 'kaminari'        # Pagination
 

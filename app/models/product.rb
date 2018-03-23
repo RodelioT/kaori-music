@@ -4,5 +4,5 @@ class Product < ApplicationRecord
 
   belongs_to :category
 
-  # accepts_nested_attributes_for :category, allow_destroy: true;
+  mount_uploader :image, ImageUploader
 end
