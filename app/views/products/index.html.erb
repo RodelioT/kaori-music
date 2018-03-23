@@ -1,2 +1,13 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>Products</h1>
+
+<% @products.each do |product| %>
+  <h2><%= link_to product.name, product %></h2>
+  <p>
+    <strong>Price:</strong>
+    <%= number_to_currency(product.price)  %>
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <%= product.category.name %>
+  </p>
+<% end %>
