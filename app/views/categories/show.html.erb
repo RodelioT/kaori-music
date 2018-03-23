@@ -1,8 +1,11 @@
 <h1><%= @category.name.singularize %> Instruments</h1>
-<% @category.products.each do |product| %>
+
+<% @products.each do |product| %>
   <h2><%= link_to product.name, product %></h2>
   <p>
     <strong>Price:</strong>
     <%= number_to_currency(product.price)  %>
   </p>
 <% end %>
+
+<%= paginate @products %>
