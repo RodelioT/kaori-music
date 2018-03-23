@@ -8,7 +8,7 @@
           <strong>Price:</strong>
           <%= number_to_currency(product.price)  %>
         </p>
-        <% if true %>
+        <% unless controller_name == 'categories' %>
           <p>
             <strong>Category:</strong>
             <%=  link_to product.category.name, product.category  %>
