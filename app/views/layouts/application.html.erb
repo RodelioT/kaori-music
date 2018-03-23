@@ -6,10 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
+  <!-- NavigationBar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li ><%= link_to 'Kaori Music', root_url %></li>
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, category %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
   <body>
-    <%= render partial: 'shared/header_menu' %>
     <%= yield %>
   </body>
 </html>
