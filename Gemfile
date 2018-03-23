@@ -35,8 +35,9 @@ gem 'jbuilder', '~> 2.5'
 
 
 # Self-added gems
-gem 'activeadmin'
-gem 'devise'
+gem 'activeadmin'   # Back-end administration tools
+gem 'devise'        # Dependency for activeAdmin
+gem 'kaminari'      # Pagination
 
 
 group :development, :test do
