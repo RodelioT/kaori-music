@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-6 test">
+        <h4><%= link_to product.name, product %></h4>
+        <%= image_tag product.image %>
+        <p>
+          <strong>Price:</strong>
+          <%= number_to_currency(product.price)  %>
+        </p>
+        <% if true %>
+          <p>
+            <strong>Category:</strong>
+            <%=  link_to product.category.name, product.category  %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

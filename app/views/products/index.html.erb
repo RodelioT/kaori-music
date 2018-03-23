@@ -1,25 +1,5 @@
 <h1>Products</h1>
 
-
-<div class="container">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-6 test">
-        <h4><%= link_to product.name, product %></h4>
-        <%= image_tag product.image %>
-        <p>
-          <strong>Price:</strong>
-          <%= number_to_currency(product.price)  %>
-        </p>
-        <p>
-          <strong>Category:</strong>
-          <%= link_to product.category.name, product.category %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
+<%= render partial: 'shared/show_products' %>
 
 <%= paginate @products %>
