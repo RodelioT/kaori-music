@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  # resources :search, only: [:index]
+  get 'search', to: 'search#index', as: 'search'
 
   root to: 'products#index'
 
