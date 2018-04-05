@@ -1,11 +1,5 @@
 <h1>Products</h1>
 
-<%= form_tag(search_path, method: "get") do %>
-  <%= label_tag(:q, "Search products for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
 <%= render partial: 'shared/show_products' %>
 
 <%= paginate @products %>

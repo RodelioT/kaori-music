@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-sm-6 test">
-        <h4><%= link_to product.name, product %></h4>
-        <%= image_tag product.image %>
+      <div class="col-sm-3 test row-eq-height">
+        <%= image_tag product.image, size: '200' %>
+        <p><%= link_to product.name, product %></p>
         <p>
           <strong>Price:</strong>
           <%= number_to_currency(product.price)  %>
