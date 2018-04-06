@@ -14,7 +14,7 @@
     <h2 class="col-sm-8">Kaori Music</h2>
 
     <div class="search, col-sm-4">
-      <%= link_to "Shopping Cart [#{pluralize session[:shopping_cart].count, 'item'}]", 'cart' %>
+      <%= link_to "Shopping Cart [#{session[:shopping_cart].count}]", 'cart' %>
       <%= form_tag(search_path, method: "get") do %>
         <%= label_tag(:q, "Search products for:") %>
         <%= text_field_tag(:q) %>
@@ -36,10 +36,6 @@
       </ul>
     </div>
   </nav>
-
-  <div>
-    <%= debug session[:shopping_cart] %>
-  </div>
 
   <body>
     <%= yield %>

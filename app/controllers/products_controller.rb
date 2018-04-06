@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
       session[:shopping_cart] << id   # Add that integer to the cart
       redirect_to products_path       # Redirect it back, after the POST action
     end
-
   end
 
   def remove_from_cart
@@ -29,12 +28,9 @@ class ProductsController < ApplicationController
     redirect_to cart_path
   end
 
-  # TODO: On the shopping cart page, use this to clear the cart
-  # You'll probably need to move this into the cart controller
-  # remember to add the actual link in the view to clear cart (remember to use method: :post)
   def clear_shopping_cart
     session[:shopping_cart] = nil
-    redirect_to products_path
+    redirect_to cart_path
   end
 
   private
