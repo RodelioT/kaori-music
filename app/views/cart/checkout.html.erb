@@ -1,7 +1,2 @@
 <h1>Checkout</h1>
 <p>Subtotal: <%= number_to_currency(@subtotal) %></p>
-
-<% form_for @customer do |customer| %>
-  <%= customer.text_field :firstName %><br />
-  <%= customer.text_field :lastName %><br />
-<% end %>
