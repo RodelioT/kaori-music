@@ -20,10 +20,6 @@
         <%= submit_tag("Search") %>
       <% end %>
     </div>
-
-    <div class="col-sm-4">
-      <%= debug session[:add_to_cart] %>
-    </div>
   </div>
 
   <!-- NavigationBar -->
@@ -37,6 +33,10 @@
       </ul>
     </div>
   </nav>
+
+  <div>
+    <%= debug session[:shopping_cart] %>
+  </div>
 
   <body>
     <%= yield %>
