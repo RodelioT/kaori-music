@@ -38,6 +38,17 @@
   font-size: 50px;
 }
 
+.header > h2 > a {
+  color:black;
+  text-decoration: none;
+}
+
+.header > h2 > a:hover {
+  color: hotpink;
+  transition-duration: 150ms;
+  text-decoration: none;
+}
+
 .search {
   text-align: right;
 }
