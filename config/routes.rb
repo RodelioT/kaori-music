@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    member do
+      post :add_to_cart
+      post :remove_from_cart
+    end
+  end
+
   resources :categories, only: [:show]
   # resources :search, only: [:index]
   get 'search', to: 'search#index', as: 'search'

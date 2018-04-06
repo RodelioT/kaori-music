@@ -5,6 +5,9 @@
   <%= number_to_currency(@product.price)  %>
 </p>
 <p>
+  <%= link_to 'Add to cart', add_to_cart_product_path(@product), method: :post %>
+</p>
+<p>
   <strong>Category:</strong>
   <%= link_to @product.category.name, @product.category %>
 </p>
