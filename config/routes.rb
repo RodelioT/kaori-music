@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cart/checkout'
   get 'search/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   # resources :search, only: [:index]
   get 'search', to: 'search#index', as: 'search'
+
+  # resources :cart, only: [:show]
+  get 'cart', to: 'cart#show', as: 'cart'
 
   root to: 'products#index'
 
