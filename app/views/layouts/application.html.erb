@@ -11,15 +11,18 @@
   </head>
 
   <div class="header">
-    <h2 class="col-sm-9">Kaori Music</h2>
+    <h2 class="col-sm-8">Kaori Music</h2>
 
-    <div class="search, col-sm-3">
+    <div class="search, col-sm-4">
+      <%= link_to "Shopping Cart [#{pluralize session[:shopping_cart].count, 'item'}]", 'cart' %>
       <%= form_tag(search_path, method: "get") do %>
         <%= label_tag(:q, "Search products for:") %>
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
       <% end %>
     </div>
+
+
   </div>
 
   <!-- NavigationBar -->
@@ -33,6 +36,10 @@
       </ul>
     </div>
   </nav>
+
+  <div>
+    <%= debug session[:shopping_cart] %>
+  </div>
 
   <body>
     <%= yield %>

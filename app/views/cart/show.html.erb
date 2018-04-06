@@ -1,0 +1,28 @@
+<h1>Shopping Cart</h1>
+
+<% @shopping_cart_items.each do |product| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <%= image_tag product.image, size: '200' %>
+    </div>
+    <div class="col-sm-9">
+      <p><%= link_to product.name, product %></p>
+      <p>
+        <strong>Price:</strong>
+        <%= number_to_currency(product.price)  %>
+      </p>
+      <p>
+        <strong>Category:</strong>
+        <%=  link_to product.category.name, product.category  %>
+      </p>
+      <%= link_to 'Remove item from cart', remove_from_cart_product_path(product), method: :post %>
+    </div>
+  </div>
+<% end %>
+
+<% if @shopping_cart_items.empty? %>
+  <p>You have no items in your shopping cart.</p>
+<% else %>
+  <p><%= link_to 'Clear shopping cart', clear_shopping_cart_products_path, method: :post %></p>
+<% end %>
+
