@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
   def remove_from_cart
     id = params[:id].to_i # Convert the string to an integer
     session[:shopping_cart].delete(id)
-    # redirect_to 'cart/show'
     redirect_to cart_path
   end
 

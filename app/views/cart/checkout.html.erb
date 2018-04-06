@@ -7,8 +7,7 @@
   Address: <%= cust.text_field :address %><br />
   City: <%= cust.text_field :city %><br />
   Postal Code: <%= cust.text_field :postalCode %><br />
+  Province: <%= cust.collection_select(:province_id, Province.all, :id, :name) %><br />
 
-  Province: <%= cust.collection_select(:province_id, Province.all, :id, :name) %>
-
-  <%= cust.submit "Create" %>
+  <%= cust.submit "Submit" %>
 <% end %>

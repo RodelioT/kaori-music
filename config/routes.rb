@@ -22,13 +22,13 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index', as: 'search'
 
   # resources :cart, only: [:show]
-  get 'cart', to: 'cart#show', as: 'cart' do
+  get 'cart', to: 'cart#show', as: 'cart'
+
+  get 'cart/checkout/processPayment', to: 'cart#process_payment', as: 'cart/processPayment' do
     member do
-      post :remove_from_cart
+      post :process_payment
     end
   end
-
-  get 'cart/checkout/processPayment', to: 'cart#process_payment'
 
   root to: 'products#index'
 
