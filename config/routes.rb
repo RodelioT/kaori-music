@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'cart/checkout/processPayment', to: 'cart#process_payment'
+
   root to: 'products#index'
 
 end

@@ -11,6 +11,12 @@ class CartController < ApplicationController
 
   def checkout
     @categories = Category.all
+    @provinces = Province.all
+    @customer = Customer.new
+  end
+
+  def process_payment
+
   end
 
   private
