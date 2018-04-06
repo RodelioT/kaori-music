@@ -29,5 +29,15 @@
 .header {
   background-color: #fcff7f;
   padding: 30px;
+  height: 100px;
   text-align: left;
+}
+
+.header > h2 {
+  font-family: 'Sofia', cursive;
+  font-size: 50px;
+}
+
+.search {
+  text-align: right;
 }
