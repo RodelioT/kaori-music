@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index', as: 'search'
 
   # resources :cart, only: [:show]
-  get 'cart', to: 'cart#show', as: 'cart'
+  get 'cart', to: 'cart#show', as: 'cart' do
+    member do
+      post :remove_from_cart
+    end
+  end
 
   root to: 'products#index'
 
