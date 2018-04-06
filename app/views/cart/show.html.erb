@@ -24,6 +24,7 @@
   <p>You have no items in your shopping cart.</p>
 <% else %>
   <h2>Subtotal: <%= number_to_currency(@subtotal) %></h2>
+  <p><%= link_to 'Proceed to Checkout', cart_checkout_path %></p>
   <p><%= link_to 'Clear shopping cart', clear_shopping_cart_products_path, method: :post %></p>
 <% end %>
 
