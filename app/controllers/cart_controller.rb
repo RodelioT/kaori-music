@@ -5,18 +5,18 @@ class CartController < ApplicationController
 
   def show
     @categories = Category.all
-
-
   end
 
   def checkout
     @categories = Category.all
     @provinces = Province.all
+
     @customer = Customer.new
   end
 
   def process_payment
-
+    @categories = Category.all
+    # TODO: continue from here
   end
 
   private
