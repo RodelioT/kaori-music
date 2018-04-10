@@ -1,11 +1,15 @@
 class CustomersController < ApplicationController
   def create
-    Customer.create(name:       params[:name],
-                    email:      params[:email],
-                    address:    params[:address],
-                    city:       params[:city],
-                    postalCode: params[:postalCode],
-                    province:   params[:province_id])
+
+    @customer = Customer.new(params[:customer])
+    @customer.save
+
+    # Customer.create(name:       customer[:name],
+    #                 email:      customer[:email],
+    #                 address:    customer[:address],
+    #                 city:       customer[:city],
+    #                 postalCode: customer[:postalCode],
+    #                 province:   customer[:province_id])
 
     # Customer.create(name:       'Jane Smith',
     #                 email:      'jsmith@gmail.com',
@@ -18,4 +22,5 @@ class CustomersController < ApplicationController
 
     redirect_to root_url
   end
+
 end

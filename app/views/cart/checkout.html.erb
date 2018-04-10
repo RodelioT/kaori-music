@@ -1,13 +1,13 @@
 <h1>Checkout</h1>
 <p>Subtotal: <%= number_to_currency(@subtotal) %></p>
 
-<%= form_for @customer, html: {class: "customer_form"} do |cust| %>
-  Name: <%= cust.text_field :name %><br />
-  Email: <%= cust.email_field :email %><br />
-  Address: <%= cust.text_field :address %><br />
-  City: <%= cust.text_field :city %><br />
-  Postal Code: <%= cust.text_field :postalCode %><br />
-  Province: <%= cust.collection_select(:province_id, Province.all, :id, :name) %><br />
+<%= form_for @customer, html: {class: "customer_form"} do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Email: <%= f.email_field :email %><br />
+  Address: <%= f.text_field :address %><br />
+  City: <%= f.text_field :city %><br />
+  Postal Code: <%= f.text_field :postalCode %><br />
+  Province: <%= f.collection_select(:province_id, Province.all, :id, :name) %><br />
 
-  <%= cust.submit "Submit" %>
+  <%= f.submit "Submit" %>
 <% end %>
