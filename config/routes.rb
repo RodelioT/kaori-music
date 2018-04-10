@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index', as: 'search'
 
   get 'cart', to: 'cart#show', as: 'cart'
-
   get 'cart/checkout/processPayment', to: 'cart#process_payment', as: 'cart/processPayment'
 
   resources :customers, only: [:create]

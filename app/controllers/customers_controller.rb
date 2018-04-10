@@ -1,24 +1,15 @@
 class CustomersController < ApplicationController
   def create
 
-    @customer = Customer.new(params[:customer])
-    @customer.save
+    customer_params = params[:customer]
+    customer_params.permit!
 
-    # Customer.create(name:       customer[:name],
-    #                 email:      customer[:email],
-    #                 address:    customer[:address],
-    #                 city:       customer[:city],
-    #                 postalCode: customer[:postalCode],
-    #                 province:   customer[:province_id])
-
-    # Customer.create(name:       'Jane Smith',
-    #                 email:      'jsmith@gmail.com',
-    #                 address:    '11 Adsum Drive',
-    #                 city:       'Winnipeg',
-    #                 postalCode: 'R2R 2E2',
-    #                 province:   Province.first)
-
-    # Customer.create(params[:customer])
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      # success
+    else
+      # Error handling
+    end
 
     redirect_to root_url
   end
