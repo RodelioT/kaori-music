@@ -5,6 +5,12 @@ class CartController < ApplicationController
 
   def show
     @categories = Category.all
+    @products = []
+
+    @shopping_cart_items.each do |product_hash|
+      @products << Product.find(product_hash["id"])
+    end
+
   end
 
   def checkout
@@ -26,13 +32,13 @@ class CartController < ApplicationController
   end
 
   def load_shopping_cart
-    @shopping_cart_items = Product.find(session[:shopping_cart])
+    @shopping_cart_items = session[:shopping_cart]
   end
 
   def load_subtotal
     @subtotal = 0
     @shopping_cart_items.each do |product|
-      @subtotal += product.price
+      @subtotal += Product.find(product["id"]).price
     end
   end
 end

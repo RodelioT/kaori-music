@@ -13,17 +13,24 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    id = params[:id].to_i             # Convert the string to an integer
+    # Convert the string to an integer
+    id = params[:id].to_i
 
-    unless session[:shopping_cart].include?(id)
-      session[:shopping_cart] << id   # Add that integer to the cart
-      redirect_to products_path       # Redirect it back, after the POST action
+    # If there are no products in the cart with the given ID
+    if session[:shopping_cart].none? { |product| product["id"] == id }
+      # Add hash to the cart
+      session[:shopping_cart] << { "id" => id, "quantity" => 1 }
+      # Redirect it back, after the POST action
+      redirect_to products_path
     end
   end
 
   def remove_from_cart
-    id = params[:id].to_i # Convert the string to an integer
-    session[:shopping_cart].delete(id)
+    # Convert the string to an integer
+    id = params[:id].to_i
+
+    # Removes products that have the given ID
+    session[:shopping_cart] = session[:shopping_cart].delete_if { |product| product["id"] == id }
     redirect_to cart_path
   end
 
