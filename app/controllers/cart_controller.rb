@@ -8,7 +8,8 @@ class CartController < ApplicationController
     @products = []
 
     @shopping_cart_items.each do |product_hash|
-      @products << Product.find(product_hash["id"])
+
+      @products << { product: Product.find(product_hash["id"]), quantity: product_hash["quantity"] }
     end
 
   end
