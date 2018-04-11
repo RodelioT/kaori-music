@@ -1,14 +1,13 @@
-class CartController < ApplicationController
+class CartsController < ApplicationController
   before_action :initialize_session
   before_action :load_shopping_cart
   before_action :load_subtotal
 
-  def show
+  def index
     @categories = Category.all
+
     @products = []
-
     @shopping_cart_items.each do |product_hash|
-
       @products << { product: Product.find(product_hash["id"]), quantity: product_hash["quantity"] }
     end
 

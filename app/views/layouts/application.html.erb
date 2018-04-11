@@ -14,7 +14,7 @@
     <h2 class="col-sm-8"><%= link_to 'Kaori Music', root_url %></h2>
 
     <div class="search, col-sm-4">
-      <%= link_to "Shopping Cart [#{session[:shopping_cart].count}]", cart_url %>
+      <%= link_to "Shopping Cart [#{session[:shopping_cart].count}]", carts_path %>
       <%= form_tag(search_path, method: "get") do %>
         <%= label_tag(:q, "Search products for:") %>
         <%= text_field_tag(:q) %>

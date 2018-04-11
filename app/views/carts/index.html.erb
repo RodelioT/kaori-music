@@ -13,14 +13,13 @@
         <%= number_to_currency(product[:product].price)  %>
       </p>
       <p>
-        <strong>Quantity:</strong>
-        <%= product[:quantity] %>
+        <%= form_tag(cart_path(id: product[:product].id), method: "patch") do %>
+          <%= label_tag(:q, "Quantity:") %>
+          <%= text_field_tag(:q, product[:quantity]) %>
+          <%= submit_tag("Update") %>
+        <% end %>
       </p>
-      <p>
-        <strong>Category:</strong>
-        <%=  link_to product[:product].category.name, product[:product].category  %>
-      </p>
-      <%= link_to 'Remove item from cart', remove_from_cart_product_path(product[:product]), method: :post %>
+      <%= link_to 'Remove item from carts', remove_from_cart_product_path(product[:product]), method: :post %>
     </div>
   </div>
 <% end %>
@@ -29,7 +28,6 @@
   <p>You have no items in your shopping cart.</p>
 <% else %>
   <h2>Subtotal: <%= number_to_currency(@subtotal) %></h2>
-  <p><%= link_to 'Proceed to Checkout', cart_checkout_path %></p>
-  <p><%= link_to 'Clear shopping cart', clear_shopping_cart_products_path, method: :post %></p>
+
 <% end %>
 
