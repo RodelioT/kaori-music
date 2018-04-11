@@ -18,12 +18,13 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:show]
+  resources :customers, only: [:create]
+  # resources :search, only: [:show]
+
   get 'search', to: 'search#index', as: 'search'
 
   get 'cart', to: 'cart#show', as: 'cart'
   get 'cart/checkout/processPayment', to: 'cart#process_payment', as: 'cart/processPayment'
-
-  resources :customers, only: [:create]
 
   root to: 'products#index'
 end
