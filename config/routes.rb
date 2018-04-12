@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :carts
   get 'carts/clear_shopping_cart', to: 'carts#clear_shopping_cart'
   get 'carts/checkout', to: 'carts#checkout'
-  # get 'carts/checkout/processPayment', to: 'carts#process_payment', as: 'carts/processPayment'
+  get 'carts/checkout/process_payment', to: 'carts#process_payment', as: 'carts/process_payment'
 
 
   root to: 'products#index'

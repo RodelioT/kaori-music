@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
       # Error handling
     end
 
-    redirect_to root_url
+    redirect_to carts_process_payment_path
   end
 
 end
