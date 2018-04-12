@@ -4,5 +4,7 @@ class Product < ApplicationRecord
 
   belongs_to :category
 
+  has_many :purchases
+
   mount_uploader :image, ImageUploader
 end
