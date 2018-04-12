@@ -27,6 +27,5 @@ Rails.application.routes.draw do
   get 'carts/checkout', to: 'carts#checkout'
   get 'carts/checkout/process_payment', to: 'carts#process_payment', as: 'carts/process_payment'
 
-
   root to: 'products#index'
 end
