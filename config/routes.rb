@@ -23,9 +23,10 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index', as: 'search'
 
   resources :carts
-  get 'carts/checkout/processPayment', to: 'carts#process_payment', as: 'carts/processPayment'
-  get 'carts/checkout'
   get 'carts/clear_shopping_cart', to: 'carts#clear_shopping_cart'
+  get 'carts/checkout', to: 'carts#checkout'
+  # get 'carts/checkout/processPayment', to: 'carts#process_payment', as: 'carts/processPayment'
+
 
   root to: 'products#index'
 end

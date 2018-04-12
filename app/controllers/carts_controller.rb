@@ -9,6 +9,14 @@ class CartsController < ApplicationController
     insert_quantities
   end
 
+  # had to turn checkout into show vv
+  def show
+    @categories = Category.all
+    @provinces = Province.all
+
+    @customer = Customer.new
+  end
+
   def update
     @categories = Category.all
 
@@ -30,13 +38,6 @@ class CartsController < ApplicationController
   # remove_from_cart is in the products controller
 
   # clear_shopping_cart is in the products controller
-
-  def checkout
-    @categories = Category.all
-    @provinces = Province.all
-
-    @customer = Customer.new
-  end
 
   def process_payment
     @categories = Category.all
