@@ -10,8 +10,11 @@ class CartsController < ApplicationController
     @shopping_cart_items.each do |product_hash|
       @products << { product: Product.find(product_hash["id"]), quantity: product_hash["quantity"] }
     end
-
   end
+
+  # remove_from_cart is in the products controller
+
+  # clear_shopping_cart is in the products controller
 
   def checkout
     @categories = Category.all

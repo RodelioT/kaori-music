@@ -31,12 +31,12 @@ class ProductsController < ApplicationController
 
     # Removes products that have the given ID
     session[:shopping_cart] = session[:shopping_cart].delete_if { |product| product["id"] == id }
-    redirect_to cart_path
+    redirect_to carts_path
   end
 
   def clear_shopping_cart
     session[:shopping_cart] = nil
-    redirect_to cart_path
+    redirect_to carts_path
   end
 
   private

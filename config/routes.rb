@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'carts/checkout'
   get 'search/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -24,8 +23,9 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index', as: 'search'
 
   resources :carts
-  # get 'carts', to: 'carts#show', as: 'carts'
   get 'carts/checkout/processPayment', to: 'carts#process_payment', as: 'carts/processPayment'
+  get 'carts/checkout'
+  get 'carts/clear_shopping_cart', to: 'carts#clear_shopping_cart'
 
   root to: 'products#index'
 end
