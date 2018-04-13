@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
   resources :customers, only: [:create]
-  # resources :search, only: [:show]
 
   get 'search', to: 'search#index', as: 'search'
 

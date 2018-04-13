@@ -9,7 +9,7 @@ class CartsController < ApplicationController
     insert_quantities
   end
 
-  # had to turn checkout into show vv
+  # aka the Checkout section
   def show
     @categories = Category.all
     @provinces = Province.all
@@ -42,6 +42,8 @@ class CartsController < ApplicationController
   def process_payment
     @categories = Category.all
     # TODO: continue from here
+    logger.debug @customer.inspect
+    session[:shopping_cart] = []
   end
 
   private
