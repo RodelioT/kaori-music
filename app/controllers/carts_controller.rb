@@ -41,8 +41,6 @@ class CartsController < ApplicationController
 
   def process_payment
     @categories = Category.all
-    # TODO: continue from here
-    logger.debug @customer.inspect
     session[:shopping_cart] = []
   end
 

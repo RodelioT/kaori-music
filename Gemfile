@@ -40,6 +40,7 @@ gem 'bootstrap-sass'  # Bootstrap
 gem 'carrierwave'     # Image uploads
 gem 'devise'          # Dependency for activeAdmin
 gem 'kaminari'        # Pagination
+gem 'stripe'          # credit card payment
 
 
 

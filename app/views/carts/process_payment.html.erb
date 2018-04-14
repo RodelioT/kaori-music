@@ -8,8 +8,8 @@
   <li>Set the Order status to paid</li>
 </ul>
 
-<h3>Subtotal: <%= number_to_currency(@subtotal) %></h3>
-<h3>Taxes: <%= number_to_currency(session[:taxrate].to_i * @subtotal / 100) %></h3>
-<h2>Grand total: <%= number_to_currency((session[:taxrate].to_i * @subtotal / 100) + @subtotal) %></h2>
+<h3>Subtotal: <%= number_to_currency(session[:subtotal]) %></h3>
+<h3>Taxes: <%= number_to_currency(session[:taxrate].to_i * session[:subtotal] / 100) %></h3>
+<h2>Grand total: <%= number_to_currency((session[:taxrate].to_i * session[:subtotal] / 100) + session[:subtotal]) %></h2>
 
 <%= link_to "Link to home page", root_url %>

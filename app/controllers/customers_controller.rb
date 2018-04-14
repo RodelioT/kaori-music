@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
     session[:taxrate] = customer.province.taxRate
 
     # Inserts a Order into the database, and associates it to the Customer
-    order = customer.orders.create(subtotal: @subtotal,
+    order = customer.orders.create(subtotal: session[:subtotal],
                            purchaseTaxRate: session[:taxrate],
                            status: Status.find_by(name: "pending") )
 
@@ -30,9 +30,9 @@ class CustomersController < ApplicationController
   private
 
   def calculate_subtotal
-    @subtotal = 0
+    session[:subtotal] = 0
     session[:shopping_cart].each do |product|
-      @subtotal += (Product.find(product["id"]).price * product["quantity"].to_i)
+      session[:subtotal] += (Product.find(product["id"]).price * product["quantity"].to_i)
     end
   end
 

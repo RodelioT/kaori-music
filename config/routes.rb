@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+
+  get 'charges/create'
+
   get 'search/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -25,6 +29,8 @@ Rails.application.routes.draw do
   get 'carts/clear_shopping_cart', to: 'carts#clear_shopping_cart'
   get 'carts/checkout', to: 'carts#checkout'
   get 'carts/checkout/process_payment', to: 'carts#process_payment', as: 'carts/process_payment'
+
+  resources :charges, only: [:new, :create]
 
   root to: 'products#index'
 end
