@@ -1,10 +1,13 @@
 class ChargesController < ApplicationController
   def new
+    @categories = Category.all
     @amount = 500 # $5.00 in cents
     @description = 'Description of Charge'
   end
 
   def create
+    @categories = Category.all
+
     # Amount in cents
     amount = 500 # TODO: Change this to the actual amount (and also change the description!)
 
@@ -24,7 +27,10 @@ class ChargesController < ApplicationController
     # @charge.paid returns a boolean depending if the charge was successful
 
     if @charge.paid && @charge.amount == (session[:subtotal] * 100)
-      
+      paidOrder = Order.find(session[:customer_id])
+      paidOrder.stripePayment = @charge.id
+      paidOrder.stripeCustomer = @customer.id
+      paidOrder.status = Status.find_by(name: "paid")
     end
 
   rescue Stripe::CardError => e

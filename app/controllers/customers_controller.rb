@@ -9,12 +9,16 @@ class CustomersController < ApplicationController
 
     calculate_subtotal
 
+    # Creates a session variable for the taxrate
     session[:taxrate] = customer.province.taxRate
 
     # Inserts a Order into the database, and associates it to the Customer
     order = customer.orders.create(subtotal: session[:subtotal],
                            purchaseTaxRate: session[:taxrate],
                            status: Status.find_by(name: "pending") )
+
+    # Creates a session variable for the customer_id
+    session[:customer_id] = order.id
 
     # Inserts a Purchase for each cart item and associates them to the Order
     session[:shopping_cart].each do |product|
