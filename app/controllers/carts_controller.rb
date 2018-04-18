@@ -41,7 +41,9 @@ class CartsController < ApplicationController
 
   def process_payment
     @categories = Category.all
-    session[:shopping_cart] = []
+    # @amount = 500 # $5.00 in cents
+    @amount = ((session[:subtotal].to_f * session[:taxrate].to_f / 100) + session[:subtotal].to_f) * 100
+    @description = 'Description of Charge'
   end
 
   private
